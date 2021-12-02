@@ -1,14 +1,13 @@
-file1 = open('/Users/connor/adventofcode/adventofcode2021-1/Day_2/Part2/input.txt', 'r')
+file1 = open('input.txt', 'r')
 Lines = file1.readlines()
 
 # var defs
 horizontalPos=0
 depthPos=0
 aimPos=0
-count = 0
+count=0
 
-
-# Strips the newline character
+# Strips the newline character & splits
 for line in Lines:
     count += 1
     x = line.strip('\n')
@@ -32,5 +31,4 @@ print ("Depth position: " + str(depthPos))
 print ("Aim position: " + str(aimPos))
 
 finalTotal=horizontalPos*depthPos
-
 print ("Your final answer is: " + str(finalTotal))
