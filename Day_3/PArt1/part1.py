@@ -27,5 +27,7 @@ while i < 12:
     columnpos(i)
     i += 1
 
-print(int(alpha, 2))
-print(int(beta, 2))
+alphaInt=(int(alpha, 2))
+betaInt=(int(beta, 2))
+
+print ("Your Final answer is: " + str((alphaInt * betaInt)))
