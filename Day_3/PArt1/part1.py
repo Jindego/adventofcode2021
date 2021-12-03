@@ -1,11 +1,13 @@
-import pandas as pd
 file1 = open('input.txt', 'r')
 Lines = file1.readlines()
-
+alpha=""
+beta=""
 
 def columnpos(number):
     coltotal=-500
     count=0
+    global alpha
+    global beta
 
     for line in Lines:
         count += 1
@@ -14,19 +16,16 @@ def columnpos(number):
         coltotal=(int(y[number])+coltotal)
 
     if coltotal > 0:
-        print("Column " + str(number) + ": Most Common - 1, Least Common - 0")
+        alpha = alpha + "1"
+        beta = beta + "0"
     else:
-        print("Column " + str(number) + ": Most Common - 0, Least Common - 1")
+        alpha = alpha + "0"
+        beta = beta + "1"
 
-columnpos(0)
-columnpos(1)
-columnpos(2)
-columnpos(3)
-columnpos(4)
-columnpos(5)
-columnpos(6)
-columnpos(7)
-columnpos(8)
-columnpos(9)
-columnpos(10)
-columnpos(11)
+i=0
+while i < 12:
+    columnpos(i)
+    i += 1
+
+print(int(alpha, 2))
+print(int(beta, 2))
